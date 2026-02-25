@@ -13,7 +13,7 @@ A modern, responsive web application for tracking personal finances, managing bu
 
 ### Phase 1: Foundation & Authentication
 Establish the core infrastructure and secure access.
-- [ ] **Infrastructure**: Next.js (App Router) project initialization with TailwindCSS and TypeScript.
+- [x] **Infrastructure**: Next.js (App Router) project initialization with TailwindCSS and TypeScript.
 - [ ] **Database**: Supabase PostgreSQL setup with the Supabase Client.
 - [ ] **Authentication**: Auth.js implementation with Google and Email providers.
 - [ ] **State Management**: Zustand for global UI state.
