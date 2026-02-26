@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Finance SaaS App
 
-## Getting Started
+The goal of this project is to build a comprehensive, full-stack personal finance management solution designed to help users take control of their financial health. The application aims to bridge the gap between simple manual logging and automated bank synchronization, offering a tiered experience for both casual users and power users.
 
-First, run the development server:
+## Project Vision
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The objective is to create a centralized hub for financial tracking that provides intuitive dashboards, intelligent budgeting, and AI-driven insights to optimize personal wealth.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development and AI Exploration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project serves as a platform for exploring and developing with modern AI-assisted engineering tools. The development workflow incorporates various AI technologies, including Google Antigravity and other experimental frameworks, to accelerate feature implementation, optimize code structure, and build intelligent financial models.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Architecture & Tech Stack
 
-## Learn More
+| Layer | Technology |
+|---|---|
+| **Framework** | [Next.js](https://nextjs.org/) (App Router) |
+| **Language** | TypeScript |
+| **Authentication** | [NextAuth.js (Auth.js)](https://next-auth.js.org/) — Open-source and cost-effective |
+| **Database** | [Supabase](https://supabase.com/) — Direct PostgreSQL and Supabase Client for simplified, free operations |
+| **Payments** | [Stripe](https://stripe.com/) — Checkout & Customer Portal |
+| **Styling** | [TailwindCSS](https://tailwindcss.com/) — Utility-first styling for fast, responsive design |
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Docs
+- [Setup Guide](README-setup.md)
