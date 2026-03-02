@@ -90,7 +90,7 @@ erDiagram
 ### Phase 1: Foundation & Authentication
 Establish the core infrastructure and secure access.
 - [x] **Infrastructure**: Next.js (App Router) project initialization with TailwindCSS and TypeScript.
-- [ ] **Database**: Supabase PostgreSQL setup with the Supabase Client.
+- [x] **Database**: Supabase PostgreSQL setup with the Supabase Client.
 - [ ] **Authentication**: Auth.js implementation with Google and Email providers.
 - [ ] **State Management**: Zustand for global UI state.
 
