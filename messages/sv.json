@@ -1,0 +1,14 @@
+{
+  "Common": {
+    "title": "Vyu",
+    "dashboard": "Instrumentpanel",
+    "login": "Logga in",
+    "logout": "Logga ut",
+    "settings": "Inställningar"
+  },
+  "Index": {
+    "title": "Välkommen till Vyu",
+    "description": "Din moderna följeslagare för privatekonomi.",
+    "getStarted": "Kom igång"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "Common": {
+    "title": "Vyu",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "logout": "Logout",
+    "settings": "Settings"
+  },
+  "Index": {
+    "title": "Welcome to Vyu",
+    "description": "Your modern personal finance companion.",
+    "getStarted": "Get Started"
+  }
+}

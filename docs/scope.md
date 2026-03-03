@@ -94,8 +94,8 @@ erDiagram
 Establish the core infrastructure and secure access.
 - [x] **Infrastructure**: Next.js (App Router) project initialization with TailwindCSS and TypeScript.
 - [x] **Database**: Supabase PostgreSQL setup with the Supabase Client.
-- [ ] **Internationalization (i18n)**: Enable multi-language support (English & Swedish) using `next-intl`.
-- [ ] **Design System**: Configure Tailwind with brand colors (#1B9AAA, #FF8360, #333333) and setup dark mode support.
+- [x] **Internationalization (i18n)**: Enable multi-language support (English & Swedish) using `next-intl`.
+- [x] **Design System**: Configure Tailwind with brand colors (#1B9AAA, #FF8360, #333333) and setup dark mode support.
 - [ ] **Authentication**: Auth.js implementation with Google and Email providers.
 - [ ] **State Management**: Zustand for global UI state.
 
