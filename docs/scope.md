@@ -25,8 +25,11 @@ A modern, responsive web application for tracking personal finances, managing bu
 
 ## 4. UI/UX Design Direction
 
-- **Theme**: Primarily **Light Mode** with a focus on whitespace and high-quality typography to maintain a minimalist feel.
-- **Accent Color**: **Vibrant Blue** (`#3b82f6`) for primary buttons, active states, and selected icons.
+- **Theme**: Support for both **Light and Dark Modes**, with a focus on whitespace and high-quality typography to maintain a minimalist feel.
+- **Accent Colors**:
+  - **Primary**: Teal (`#1B9AAA`) for main actions and branding.
+  - **Secondary**: Coral (`#FF8360`) for highlights and accents.
+  - **Dark Elements**: Charcoal (`#333333`) for text and dark backgrounds.
 - **Playfulness**: Subtle rounded corners (`border-radius: 1rem`), soft shadows, and micro-interactions (e.g., scale-up on hover) to add a friendly, modern touch.
 - **Typography**: The **Outfit** sans-serif font family for a clean, playful, and modern look.
 - **Layout**: Spacious cards with light grey borders (`#f3f4f6`) instead of heavy shadows for a neat, flat design.
@@ -91,6 +94,8 @@ erDiagram
 Establish the core infrastructure and secure access.
 - [x] **Infrastructure**: Next.js (App Router) project initialization with TailwindCSS and TypeScript.
 - [x] **Database**: Supabase PostgreSQL setup with the Supabase Client.
+- [ ] **Internationalization (i18n)**: Enable multi-language support (English & Swedish) using `next-intl`.
+- [ ] **Design System**: Configure Tailwind with brand colors (#1B9AAA, #FF8360, #333333) and setup dark mode support.
 - [ ] **Authentication**: Auth.js implementation with Google and Email providers.
 - [ ] **State Management**: Zustand for global UI state.
 
