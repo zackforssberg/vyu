@@ -12,6 +12,22 @@
     "getStarted": "Kom igång",
     "greeting": "Hej, {name}",
     "loggedInMessage": "Du är nu inloggad i din följeslagare.",
-    "loginWith": "Logga in med {provider}"
+    "loginWith": "{provider}",
+    "emailLabel": "E-postadress",
+    "emailPlaceholder": "namn@exempel.se",
+    "sendMagicLink": "Skicka magisk länk",
+    "orContinueWith": "eller fortsätt med",
+    "signup": "Registrera dig",
+    "createAccount": "Skapa ditt konto",
+    "nameLabel": "Fullständigt namn",
+    "namePlaceholder": "Johan Johansson",
+    "passwordLabel": "Lösenord",
+    "passwordPlaceholder": "••••••••",
+    "alreadyHaveAccount": "Har du redan ett konto?",
+    "dontHaveAccount": "Har du inget konto?",
+    "signUpLink": "Registrera dig här",
+    "signInLink": "Logga in här",
+    "loginWithPassword": "Logga in med lösenord",
+    "useMagicLink": "Använd magisk länk"
   }
 }

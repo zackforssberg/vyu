@@ -9,7 +9,8 @@ CREATE TABLE IF NOT EXISTS next_auth.users (
   name TEXT,
   email TEXT UNIQUE,
   "emailVerified" TIMESTAMP WITH TIME ZONE,
-  image TEXT
+  image TEXT,
+  password TEXT
 );
 
 -- Accounts table

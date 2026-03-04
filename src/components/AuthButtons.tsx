@@ -1,17 +1,12 @@
-import { signIn, signOut, auth } from "@/auth"
+import { signInAction, signOutAction } from "@/lib/auth-actions"
 
-export async function SignIn({
+export function SignIn({
   provider,
   children,
   ...props
 }: { provider?: string; children?: React.ReactNode } & React.ComponentPropsWithRef<"button">) {
   return (
-    <form
-      action={async () => {
-        "use server"
-        await signIn(provider)
-      }}
-    >
+    <form action={() => signInAction(provider)}>
       <button {...props}>
         {children || `Sign In ${provider ? `with ${provider}` : ""}`}
       </button>
@@ -19,18 +14,12 @@ export async function SignIn({
   )
 }
 
-export async function SignOut({
+export function SignOut({
   children,
   ...props
 }: { children?: React.ReactNode } & React.ComponentPropsWithRef<"button">) {
   return (
-    <form
-      action={async () => {
-        "use server"
-        await signOut()
-      }}
-      className="w-full"
-    >
+    <form action={signOutAction} className="w-full">
       <button className="w-full text-left" {...props}>
         {children || "Sign Out"}
       </button>

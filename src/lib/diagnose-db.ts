@@ -63,6 +63,14 @@ async function diagnostic() {
   } else {
     console.log("✅ 'user_id' (snake_case) column found.")
   }
+
+  console.log("\nChecking for 'password' column in 'users'...")
+  const { error: passwordError } = await supabase.from('users').select('password').limit(0)
+  if (passwordError) {
+    console.log("❌ 'password' column NOT found:", passwordError.message)
+  } else {
+    console.log("✅ 'password' column found.")
+  }
 }
 
 diagnostic()

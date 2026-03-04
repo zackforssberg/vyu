@@ -12,6 +12,22 @@
     "getStarted": "Get Started",
     "greeting": "Hi, {name}",
     "loggedInMessage": "You are successfully logged in to your companion.",
-    "loginWith": "Sign In with {provider}"
+    "loginWith": "{provider}",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "name@example.com",
+    "sendMagicLink": "Send Magic Link",
+    "orContinueWith": "or continue with",
+    "signup": "Sign Up",
+    "createAccount": "Create your account",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "John Doe",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "••••••••",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?",
+    "signUpLink": "Sign Up here",
+    "signInLink": "Sign In here",
+    "loginWithPassword": "Login with Password",
+    "useMagicLink": "Use Magic Link"
   }
 }
