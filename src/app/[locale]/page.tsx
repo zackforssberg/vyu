@@ -22,11 +22,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             {tCommon('title')}
           </div>
           <h1 className="text-5xl font-extrabold tracking-tight sm:text-7xl">
-            {session?.user ? `Hi, ${session.user.name}` : tIndex('title')}
+            {session?.user ? tIndex('greeting', { name: session.user.name ?? 'User' }) : tIndex('title')}
           </h1>
           <p className="max-w-xl text-lg text-foreground/70 sm:text-xl">
             {session?.user
-              ? "You are successfully logged in to your companion."
+              ? tIndex('loggedInMessage')
               : tIndex('description')}
           </p>
         </div>
@@ -37,11 +37,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <button className="h-14 px-8 rounded-2xl bg-primary text-white font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
                 {tCommon('dashboard')}
               </button>
-              <SignOut className="h-14 px-8 rounded-2xl border-2 border-primary/20 bg-primary/5 text-primary font-bold text-lg hover:bg-primary/10 transition-all flex items-center justify-center p-4" />
+              <SignOut className="h-14 px-8 rounded-2xl border-2 border-primary/20 bg-primary/5 text-primary font-bold text-lg hover:bg-primary/10 transition-all flex items-center justify-center p-4">
+                {tCommon('logout')}
+              </SignOut>
             </>
           ) : (
             <>
-              <SignIn provider="google" className="h-14 px-8 rounded-2xl bg-primary text-white font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20" />
+              <SignIn provider="google" className="h-14 px-8 rounded-2xl bg-primary text-white font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                {tIndex('loginWith', { provider: 'Google' })}
+              </SignIn>
               <button className="h-14 px-8 rounded-2xl border-2 border-primary/20 bg-primary/5 text-primary font-bold text-lg hover:bg-primary/10 transition-all">
                 {tCommon('login')}
               </button>

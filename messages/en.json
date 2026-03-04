@@ -9,6 +9,9 @@
   "Index": {
     "title": "Welcome to Vyu",
     "description": "Your modern personal finance companion.",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "greeting": "Hi, {name}",
+    "loggedInMessage": "You are successfully logged in to your companion.",
+    "loginWith": "Sign In with {provider}"
   }
 }
