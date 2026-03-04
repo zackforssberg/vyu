@@ -38,7 +38,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             createAccount: tIndex('createAccount'),
             nameLabel: tIndex('nameLabel'),
             namePlaceholder: tIndex('namePlaceholder'),
-            signup: tIndex('signup')
+            signup: tIndex('signup'),
+            forgotPassword: tIndex('forgotPassword'),
+            resetPassword: tIndex('resetPassword'),
+            sendResetLink: tIndex('sendResetLink'),
+            checkResetEmail: tIndex('checkResetEmail'),
+            backToLogin: tIndex('backToLogin')
           },
           common: {
             title: tCommon('title'),

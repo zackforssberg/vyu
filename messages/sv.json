@@ -28,6 +28,16 @@
     "signUpLink": "Registrera dig här",
     "signInLink": "Logga in här",
     "loginWithPassword": "Logga in med lösenord",
-    "useMagicLink": "Använd magisk länk"
+    "useMagicLink": "Använd magisk länk",
+    "forgotPassword": "Glömt lösenord?",
+    "resetPassword": "Återställ lösenord",
+    "sendResetLink": "Skicka återställningslänk",
+    "backToLogin": "Tillbaka till inloggning",
+    "enterNewPassword": "Ange ditt nya lösenord",
+    "newPasswordLabel": "Nytt lösenord",
+    "confirmPasswordLabel": "Bekräfta nytt lösenord",
+    "passwordsDoNotMatch": "Lösenorden matchar inte",
+    "passwordResetSuccess": "Lösenordet har återställts!",
+    "checkResetEmail": "Kontrollera din e-post för en återställningslänk."
   }
 }

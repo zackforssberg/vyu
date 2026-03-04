@@ -28,6 +28,16 @@
     "signUpLink": "Sign Up here",
     "signInLink": "Sign In here",
     "loginWithPassword": "Login with Password",
-    "useMagicLink": "Use Magic Link"
+    "useMagicLink": "Use Magic Link",
+    "forgotPassword": "Forgot Password?",
+    "resetPassword": "Reset Password",
+    "sendResetLink": "Send Reset Link",
+    "backToLogin": "Back to Login",
+    "enterNewPassword": "Enter your new password",
+    "newPasswordLabel": "New Password",
+    "confirmPasswordLabel": "Confirm New Password",
+    "passwordsDoNotMatch": "Passwords do not match",
+    "passwordResetSuccess": "Password has been reset successfully!",
+    "checkResetEmail": "Check your email for a reset link."
   }
 }

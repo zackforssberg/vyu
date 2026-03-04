@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { SignIn, SignOut } from "@/components/AuthButtons";
 import { SignInForm } from "@/components/SignInForm";
 import { SignUpForm } from "@/components/SignUpForm";
+import { ForgotPasswordForm } from "@/components/ForgotPasswordForm";
 import { Session } from "next-auth";
 
 interface HomeClientProps {
@@ -12,7 +13,7 @@ interface HomeClientProps {
 }
 
 export default function HomeClient({ session, translations }: HomeClientProps) {
-  const [authMode, setAuthMode] = useState<"signin" | "signup">("signin");
+  const [authMode, setAuthMode] = useState<"signin" | "signup" | "forgot-password">("signin");
   const tIndex = translations.index;
   const tCommon = translations.common;
 
@@ -56,17 +57,25 @@ export default function HomeClient({ session, translations }: HomeClientProps) {
                   useMagicLink: tIndex.useMagicLink
                 }} />
 
-                <div className="flex flex-col items-center gap-2">
-                  <p className="text-sm text-foreground/60">{tIndex.dontHaveAccount}</p>
+                <div className="flex flex-col gap-3 items-center">
+                  <div className="flex flex-col items-center gap-1">
+                    <p className="text-sm text-foreground/60">{tIndex.dontHaveAccount}</p>
+                    <button
+                      onClick={() => setAuthMode("signup")}
+                      className="text-sm font-bold text-primary hover:underline transition-colors"
+                    >
+                      {tIndex.signUpLink}
+                    </button>
+                  </div>
                   <button
-                    onClick={() => setAuthMode("signup")}
-                    className="text-sm font-bold text-primary hover:underline transition-colors"
+                    onClick={() => setAuthMode("forgot-password")}
+                    className="text-xs font-semibold text-foreground/40 hover:text-primary transition-colors"
                   >
-                    {tIndex.signUpLink}
+                    {tIndex.forgotPassword}
                   </button>
                 </div>
               </>
-            ) : (
+            ) : authMode === "signup" ? (
               <>
                 <SignUpForm
                   labels={{
@@ -90,6 +99,24 @@ export default function HomeClient({ session, translations }: HomeClientProps) {
                     {tIndex.signInLink}
                   </button>
                 </div>
+              </>
+            ) : (
+              <>
+                <ForgotPasswordForm
+                  labels={{
+                    resetPassword: tIndex.resetPassword,
+                    emailLabel: tIndex.emailLabel,
+                    emailPlaceholder: tIndex.emailPlaceholder,
+                    sendResetLink: tIndex.sendResetLink,
+                    checkResetEmail: tIndex.checkResetEmail
+                  }}
+                />
+                <button
+                  onClick={() => setAuthMode("signin")}
+                  className="text-sm font-bold text-primary hover:underline transition-colors"
+                >
+                  {tIndex.backToLogin}
+                </button>
               </>
             )}
 
