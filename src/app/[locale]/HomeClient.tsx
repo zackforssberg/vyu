@@ -17,6 +17,7 @@ export default function HomeClient({ session, translations }: HomeClientProps) {
   const tIndex = translations.index;
   const tCommon = translations.common;
 
+
   return (
     <main className="flex flex-col items-center gap-8 px-8 py-16 text-center w-full max-w-4xl">
       <div className="flex flex-col items-center gap-4">

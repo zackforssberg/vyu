@@ -97,7 +97,7 @@ Establish the core infrastructure and secure access.
 - [x] **Internationalization (i18n)**: Enable multi-language support (English & Swedish) using `next-intl`.
 - [x] **Design System**: Configure Tailwind with brand colors (#1B9AAA, #FF8360, #333333) and setup dark mode support.
 - [x] **Authentication**: Auth.js implementation with Google and Email providers.
-- [ ] **State Management**: Zustand for global UI state.
+- [x] **State Management**: Zustand for global UI state.
 
 ### Phase 2: MVP - Core Transaction Management
 Implement the primary tracker features for basic users.
