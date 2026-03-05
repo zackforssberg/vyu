@@ -42,6 +42,8 @@
   },
   "Dashboard": {
     "overview": "Översikt",
+    "recentTransactions": "Senaste transaktioner",
+    "viewAll": "Visa alla",
     "transactions": "Transaktioner",
     "budgets": "Budgetar",
     "categories": "Kategorier",
@@ -53,5 +55,24 @@
     "settings": "Inställningar",
     "collapse": "Minimera",
     "logout": "Logga ut"
+  },
+  "Transactions": {
+    "title": "Transaktioner",
+    "addTransaction": "Lägg till transaktion",
+    "amount": "Belopp",
+    "type": "Typ",
+    "income": "Inkomst",
+    "expense": "Utgift",
+    "category": "Kategori",
+    "description": "Beskrivning",
+    "date": "Datum",
+    "save": "Spara",
+    "cancel": "Avbryt",
+    "delete": "Radera",
+    "confirmDelete": "Är du säker på att du vill radera denna transaktion?",
+    "last30Days": "Senaste 30 dagarna",
+    "allTypes": "Alla typer",
+    "searchPlaceholder": "Sök transaktioner...",
+    "noTransactionsFound": "Inga transaktioner hittades."
   }
 }
