@@ -102,7 +102,7 @@ Establish the core infrastructure and secure access.
 ### Phase 2: MVP - Core Transaction Management
 Implement the primary tracker features for basic users.
 - [x] **Dashboard**: Layout with responsive sidebar and main spending overview.
-- [ ] **Transactions**: CRUD operations for manually adding income and expenses.
+- [x] **Transactions**: CRUD operations for manually adding income and expenses.
 - [ ] **Categories**: System for default categories and category selection.
 - [ ] **Search/Filter**: Filtering transactions by date, type, and keyword.
 

@@ -2,37 +2,50 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { addTransaction, TransactionType } from "@/lib/transaction-actions"
+import { addTransaction, updateTransaction, TransactionType, TransactionData } from "@/lib/transaction-actions"
 import { cn } from "@/lib/utils"
-import { Loader2, Plus } from "lucide-react"
+import { Loader2, Plus, X } from "lucide-react"
 
-export function AddTransactionForm() {
+interface AddTransactionFormProps {
+  initialData?: TransactionData & { id: string }
+  onSuccess?: () => void
+  onCancel?: () => void
+}
+
+export function AddTransactionForm({ initialData, onSuccess, onCancel }: AddTransactionFormProps) {
   const t = useTranslations("Transactions")
   const [loading, setLoading] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
-  const [type, setType] = useState<TransactionType>('expense')
-  const [amount, setAmount] = useState("")
-  const [category, setCategory] = useState("Common")
-  const [description, setDescription] = useState("")
-  const [date, setDate] = useState(new Date().toISOString().split('T')[0])
+  const [isOpen, setIsOpen] = useState(!!initialData)
+  const [type, setType] = useState<TransactionType>(initialData?.type || 'expense')
+  const [amount, setAmount] = useState(initialData?.amount.toString() || "")
+  const [category, setCategory] = useState(initialData?.category || "Common")
+  const [description, setDescription] = useState(initialData?.description || "")
+  const [date, setDate] = useState(initialData?.date ? new Date(initialData.date).toISOString().split('T')[0] : new Date().toISOString().split('T')[0])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
 
+    const payload = {
+      amount: parseFloat(amount),
+      type,
+      category,
+      description,
+      date: new Date(date).toISOString()
+    }
+
     try {
-      const result = await addTransaction({
-        amount: parseFloat(amount),
-        type,
-        category,
-        description,
-        date: new Date(date).toISOString()
-      })
+      const result = initialData
+        ? await updateTransaction(initialData.id, payload)
+        : await addTransaction(payload)
 
       if (result.success) {
-        setAmount("")
-        setDescription("")
-        setIsOpen(false)
+        if (!initialData) {
+          setAmount("")
+          setDescription("")
+          setIsOpen(false)
+        }
+        onSuccess?.()
       } else {
         alert(result.error)
       }
@@ -58,7 +71,7 @@ export function AddTransactionForm() {
   return (
     <div className="bg-card border border-border rounded-3xl p-6 shadow-xl animate-in zoom-in-95 duration-200">
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="flex bg-secondary/30 p-1 rounded-xl gap-1">
+        <div className="flex bg-secondary p-1 rounded-xl gap-1">
           <button
             type="button"
             onClick={() => setType('expense')}
@@ -92,7 +105,7 @@ export function AddTransactionForm() {
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             placeholder="0.00"
-            className="w-full bg-secondary/20 border-border rounded-xl px-4 py-3 outline-none focus:ring-2 ring-primary/20 transition-all font-black text-xl"
+            className="w-full bg-white dark:bg-charcoal border-border rounded-xl px-4 py-3 outline-none focus:ring-2 ring-primary/20 transition-all font-black text-xl"
           />
         </div>
 
@@ -103,7 +116,7 @@ export function AddTransactionForm() {
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full bg-secondary/20 border-border rounded-xl px-4 py-3 outline-none focus:ring-2 ring-primary/20 transition-all font-bold"
+            className="w-full bg-white dark:bg-charcoal border-border rounded-xl px-4 py-3 outline-none focus:ring-2 ring-primary/20 transition-all font-bold"
           >
             <option value="Common">Common</option>
             <option value="Food">Food & Drinks</option>
@@ -122,7 +135,7 @@ export function AddTransactionForm() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder={t("searchPlaceholder")}
-            className="w-full bg-secondary/20 border-border rounded-xl px-4 py-3 outline-none focus:ring-2 ring-primary/20 transition-all"
+            className="w-full bg-white dark:bg-charcoal border-border rounded-xl px-4 py-3 outline-none focus:ring-2 ring-primary/20 transition-all"
           />
         </div>
 
@@ -135,25 +148,28 @@ export function AddTransactionForm() {
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            className="w-full bg-secondary/20 border-border rounded-xl px-4 py-3 outline-none focus:ring-2 ring-primary/20 transition-all font-bold"
+            className="w-full bg-white dark:bg-charcoal border-border rounded-xl px-4 py-3 outline-none focus:ring-2 ring-primary/20 transition-all font-bold"
           />
         </div>
 
         <div className="flex gap-3 pt-2">
           <button
             type="button"
-            onClick={() => setIsOpen(false)}
-            className="flex-1 py-3 font-bold text-muted-foreground hover:bg-secondary/50 rounded-xl transition-all"
+            onClick={() => {
+              setIsOpen(false)
+              onCancel?.()
+            }}
+            className="flex-1 py-3 font-bold text-white bg-secondary rounded-xl hover:bg-secondary/90 hover:scale-[1.02] active:scale-[0.98] transition-all"
           >
             {t("cancel")}
           </button>
           <button
             disabled={loading}
             type="submit"
-            className="flex-1 py-3 bg-primary text-white font-bold rounded-xl hover:opacity-90 disabled:opacity-50 transition-all flex items-center justify-center gap-2"
+            className="flex-1 py-3 bg-primary text-white font-bold rounded-xl hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 transition-all flex items-center justify-center gap-2"
           >
             {loading && <Loader2 className="h-4 w-4 animate-spin" />}
-            {t("save")}
+            {initialData ? t("save") : t("save")}
           </button>
         </div>
       </form>

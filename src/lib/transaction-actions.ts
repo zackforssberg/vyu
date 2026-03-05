@@ -85,3 +85,32 @@ export async function deleteTransaction(id: string) {
   revalidatePath('/[locale]/dashboard', 'layout')
   return { success: true }
 }
+
+export async function updateTransaction(id: string, data: TransactionData) {
+  const session = await auth()
+  if (!session?.user?.id) {
+    throw new Error("Unauthorized")
+  }
+
+  const supabase = createAdminClient()
+
+  const { error } = await supabase
+    .from('transactions')
+    .update({
+      amount: data.amount,
+      type: data.type,
+      category: data.category,
+      description: data.description,
+      date: data.date || new Date().toISOString(),
+    })
+    .eq('id', id)
+    .eq('user_id', session.user.id)
+
+  if (error) {
+    console.error("Error updating transaction:", error)
+    return { success: false, error: error.message }
+  }
+
+  revalidatePath('/[locale]/dashboard', 'layout')
+  return { success: true }
+}
