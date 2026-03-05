@@ -39,5 +39,19 @@
     "passwordsDoNotMatch": "Lösenorden matchar inte",
     "passwordResetSuccess": "Lösenordet har återställts!",
     "checkResetEmail": "Kontrollera din e-post för en återställningslänk."
+  },
+  "Dashboard": {
+    "overview": "Översikt",
+    "transactions": "Transaktioner",
+    "budgets": "Budgetar",
+    "categories": "Kategorier",
+    "totalBalance": "Total balans",
+    "monthlyIncome": "Månadsinkomst",
+    "monthlyExpenses": "Månadsutgifter",
+    "welcomeBack": "Välkommen tillbaka, {name}!",
+    "noTransactions": "Inga transaktioner ännu.",
+    "settings": "Inställningar",
+    "collapse": "Minimera",
+    "logout": "Logga ut"
   }
 }

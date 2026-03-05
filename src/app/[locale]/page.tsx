@@ -13,7 +13,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background text-foreground transition-colors duration-300">
-      <ThemeLanguageToggle />
+      {!session && <ThemeLanguageToggle />}
       <HomeClient
         session={session}
         translations={{

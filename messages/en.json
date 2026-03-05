@@ -39,5 +39,19 @@
     "passwordsDoNotMatch": "Passwords do not match",
     "passwordResetSuccess": "Password has been reset successfully!",
     "checkResetEmail": "Check your email for a reset link."
+  },
+  "Dashboard": {
+    "overview": "Overview",
+    "transactions": "Transactions",
+    "budgets": "Budgets",
+    "categories": "Categories",
+    "totalBalance": "Total Balance",
+    "monthlyIncome": "Monthly Income",
+    "monthlyExpenses": "Monthly Expenses",
+    "welcomeBack": "Welcome back, {name}!",
+    "noTransactions": "No transactions yet.",
+    "settings": "Settings",
+    "collapse": "Collapse",
+    "logout": "Logout"
   }
 }

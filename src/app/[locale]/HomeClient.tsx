@@ -7,6 +7,8 @@ import { SignUpForm } from "@/components/SignUpForm";
 import { ForgotPasswordForm } from "@/components/ForgotPasswordForm";
 import { Session } from "next-auth";
 
+import { Link } from "@/i18n/routing";
+
 interface HomeClientProps {
   session: Session | null;
   translations: any;
@@ -37,9 +39,9 @@ export default function HomeClient({ session, translations }: HomeClientProps) {
       <div className="flex flex-col gap-8 w-full max-w-sm">
         {session?.user ? (
           <div className="flex flex-col gap-4 sm:flex-row w-full justify-center">
-            <button className="h-14 px-8 rounded-2xl bg-primary text-white font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
+            <Link href="/dashboard" className="h-14 px-8 rounded-2xl bg-primary text-white font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20 flex items-center justify-center">
               {tCommon.dashboard}
-            </button>
+            </Link>
             <SignOut className="h-14 px-8 rounded-2xl border-2 border-primary/20 bg-primary/5 text-primary font-bold text-lg hover:bg-primary/10 transition-all flex items-center justify-center p-4">
               {tCommon.logout}
             </SignOut>
