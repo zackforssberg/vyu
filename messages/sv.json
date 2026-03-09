@@ -73,6 +73,8 @@
     "last30Days": "Senaste 30 dagarna",
     "allTypes": "Alla typer",
     "searchPlaceholder": "Sök transaktioner...",
-    "noTransactionsFound": "Inga transaktioner hittades."
+    "noTransactionsFound": "Inga transaktioner hittades.",
+    "addCategory": "Lägg till kategori",
+    "newCategoryName": "Nytt kategorinamn"
   }
 }

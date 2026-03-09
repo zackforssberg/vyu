@@ -10,6 +10,7 @@ export interface TransactionData {
   amount: number
   type: TransactionType
   category: string
+  category_id?: string
   description?: string
   date?: string
 }
@@ -27,8 +28,9 @@ export async function addTransaction(data: TransactionData) {
     amount: data.amount,
     type: data.type,
     category: data.category,
+    category_id: data.category_id,
     description: data.description,
-    date: data.date || new Date().toISOString(), // Use provided date or now
+    date: data.date || new Date().toISOString(),
   })
 
   if (error) {
@@ -100,6 +102,7 @@ export async function updateTransaction(id: string, data: TransactionData) {
       amount: data.amount,
       type: data.type,
       category: data.category,
+      category_id: data.category_id,
       description: data.description,
       date: data.date || new Date().toISOString(),
     })

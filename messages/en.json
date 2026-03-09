@@ -73,6 +73,8 @@
     "last30Days": "Last 30 Days",
     "allTypes": "All Types",
     "searchPlaceholder": "Search transactions...",
-    "noTransactionsFound": "No transactions found."
+    "noTransactionsFound": "No transactions found.",
+    "addCategory": "Add Category",
+    "newCategoryName": "New Category Name"
   }
 }
