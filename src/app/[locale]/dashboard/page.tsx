@@ -10,7 +10,7 @@ export default async function DashboardPage() {
   const session = await auth()
   const t = await getTranslations("Dashboard")
   const txT = await getTranslations("Transactions")
-  const { data: transactions = [] } = await getTransactions(5)
+  const { data: transactions = [] } = await getTransactions({ limit: 5 })
 
   return (
     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">

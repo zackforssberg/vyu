@@ -104,7 +104,7 @@ Implement the primary tracker features for basic users.
 - [x] **Dashboard**: Layout with responsive sidebar and main spending overview.
 - [x] **Transactions**: CRUD operations for manually adding income and expenses.
 - [x] **Categories**: System for default categories and category selection.
-- [ ] **Search/Filter**: Filtering transactions by date, type, and keyword.
+- [x] **Search/Filter**: Filtering transactions by date, type, and keyword.
 
 ### Phase 3: Budgeting & Monitoring
 Add tools for users to plan their spending.

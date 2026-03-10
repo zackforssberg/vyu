@@ -42,20 +42,52 @@ export async function addTransaction(data: TransactionData) {
   return { success: true }
 }
 
-export async function getTransactions(limit = 10) {
+export interface TransactionFilters {
+  search?: string
+  type?: 'all' | 'income' | 'expense'
+  category_id?: string
+  startDate?: string
+  endDate?: string
+  limit?: number
+}
+
+export async function getTransactions(filters: TransactionFilters = {}) {
   const session = await auth()
   if (!session?.user?.id) {
     throw new Error("Unauthorized")
   }
 
   const supabase = createAdminClient()
+  const { search, type, category_id, startDate, endDate, limit = 50 } = filters
 
-  const { data, error } = await supabase
+  let query = supabase
     .from('transactions')
     .select('*')
     .eq('user_id', session.user.id)
     .order('date', { ascending: false })
     .limit(limit)
+
+  if (search) {
+    query = query.ilike('description', `%${search}%`)
+  }
+
+  if (type && type !== 'all') {
+    query = query.eq('type', type)
+  }
+
+  if (category_id) {
+    query = query.eq('category_id', category_id)
+  }
+
+  if (startDate) {
+    query = query.gte('date', `${startDate}T00:00:00Z`)
+  }
+
+  if (endDate) {
+    query = query.lte('date', `${endDate}T23:59:59Z`)
+  }
+
+  const { data, error } = await query
 
   if (error) {
     console.error("Error fetching transactions:", error)

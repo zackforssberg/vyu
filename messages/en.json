@@ -71,10 +71,13 @@
     "delete": "Delete",
     "confirmDelete": "Are you sure you want to delete this transaction?",
     "last30Days": "Last 30 Days",
+    "transactionHistory": "Transaction History",
+    "filteredResults": "Filtered Results",
     "allTypes": "All Types",
     "searchPlaceholder": "Search transactions...",
     "noTransactionsFound": "No transactions found.",
     "addCategory": "Add Category",
-    "newCategoryName": "New Category Name"
+    "newCategoryName": "New Category Name",
+    "clearFilters": "Clear Filters"
   }
 }
