@@ -1,17 +1,27 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { useTranslations } from "next-intl"
 import { TrendingUp, TrendingDown, CreditCard } from "lucide-react"
+import { getUserPreferences } from "@/lib/settings-actions"
+import { formatCurrency } from "@/lib/currency"
 import { cn } from "@/lib/utils"
 
 export function SummaryCards() {
   const t = useTranslations("Dashboard")
+  const [currency, setCurrency] = useState("SEK")
+
+  useEffect(() => {
+    getUserPreferences().then(res => {
+      if (res.success) setCurrency(res.data.currency)
+    })
+  }, [])
 
   // Mock data for now
   const stats = [
     {
       label: t("totalBalance"),
-      value: "45,230 SEK",
+      value: 45230,
       change: "+12.5%",
       trend: "up",
       icon: CreditCard,
@@ -19,7 +29,7 @@ export function SummaryCards() {
     },
     {
       label: t("monthlyIncome"),
-      value: "32,000 SEK",
+      value: 32000,
       change: "+2.3%",
       trend: "up",
       icon: TrendingUp,
@@ -27,7 +37,7 @@ export function SummaryCards() {
     },
     {
       label: t("monthlyExpenses"),
-      value: "14,500 SEK",
+      value: 14500,
       change: "-5.2%",
       trend: "down",
       icon: TrendingDown,
@@ -52,7 +62,7 @@ export function SummaryCards() {
           </div>
           <div className="flex flex-col">
             <span className="text-sm font-medium text-muted-foreground">{stat.label}</span>
-            <span className="text-2xl font-black tracking-tight">{stat.value}</span>
+            <span className="text-2xl font-black tracking-tight">{formatCurrency(stat.value, currency)}</span>
           </div>
         </div>
       ))}

@@ -108,8 +108,9 @@ Implement the primary tracker features for basic users.
 
 ### Phase 3: Budgeting & Monitoring
 Add tools for users to plan their spending.
-- [ ] **Monthly Budget**: Interface to set a total monthly spending cap.
-- [ ] **Budget Progress**: Visual progress bars showing "Budget vs. Actual".
+- [x] **Monthly Budget**: Interface to set a total monthly spending cap.
+- [x] **Budget Progress**: Visual progress bars showing "Budget vs. Actual".
+- [x] **Category Budgets**: Set and manage spending limits for specific categories.
 - [ ] **Savings Goals (Premium)**: Creation and tracking of specific savings targets.
 - [ ] **Alerts (Premium)**: UI notifications for budget thresholds at 80% and 100%.
 

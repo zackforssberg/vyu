@@ -44,6 +44,12 @@
     "overview": "Overview",
     "recentTransactions": "Recent Transactions",
     "viewAll": "View All",
+    "monthlyBudget": "Monthly Budget",
+    "setBudget": "Set Budget",
+    "spentOf": "{spent} spent of {limit}",
+    "budgetRemaining": "{amount} remaining",
+    "budgetOver": "{amount} over budget",
+    "saveBudget": "Save Budget",
     "transactions": "Transactions",
     "budgets": "Budgets",
     "categories": "Categories",
@@ -54,7 +60,9 @@
     "noTransactions": "No transactions yet.",
     "settings": "Settings",
     "collapse": "Collapse",
-    "logout": "Logout"
+    "logout": "Logout",
+    "addBudget": "Add Budget",
+    "editBudget": "Edit Budget"
   },
   "Transactions": {
     "title": "Transactions",
@@ -79,5 +87,20 @@
     "addCategory": "Add Category",
     "newCategoryName": "New Category Name",
     "clearFilters": "Clear Filters"
+  },
+  "Settings": {
+    "title": "Settings",
+    "description": "Manage your account preferences and application settings.",
+    "currency": "Currency",
+    "currencyDescription": "Choose your preferred currency for all financial displays.",
+    "language": "Language",
+    "languageDescription": "Select the language for the application interface.",
+    "theme": "Theme",
+    "themeDescription": "Customize the visual appearance of the application.",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "saveSuccess": "Settings updated successfully!",
+    "saveError": "Failed to update settings. Please try again."
   }
 }

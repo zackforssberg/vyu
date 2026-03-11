@@ -44,6 +44,12 @@
     "overview": "Översikt",
     "recentTransactions": "Senaste transaktioner",
     "viewAll": "Visa alla",
+    "monthlyBudget": "Månadsbudget",
+    "setBudget": "Sätt budget",
+    "spentOf": "{spent} använt av {limit}",
+    "budgetRemaining": "{amount} kvar",
+    "budgetOver": "{amount} över budget",
+    "saveBudget": "Spara budget",
     "transactions": "Transaktioner",
     "budgets": "Budgetar",
     "categories": "Kategorier",
@@ -51,10 +57,12 @@
     "monthlyIncome": "Månadsinkomst",
     "monthlyExpenses": "Månadsutgifter",
     "welcomeBack": "Välkommen tillbaka, {name}!",
-    "noTransactions": "Inga transaktioner ännu.",
     "settings": "Inställningar",
+    "logout": "Logga ut",
     "collapse": "Minimera",
-    "logout": "Logga ut"
+    "noTransactions": "Inga transaktioner ännu.",
+    "addBudget": "Lägg till budget",
+    "editBudget": "Redigera budget"
   },
   "Transactions": {
     "title": "Transaktioner",
@@ -79,5 +87,20 @@
     "addCategory": "Lägg till kategori",
     "newCategoryName": "Nytt kategorinamn",
     "clearFilters": "Rensa filter"
+  },
+  "Settings": {
+    "title": "Inställningar",
+    "description": "Hantera dina kontoinställningar och applikationsinställningar.",
+    "currency": "Valuta",
+    "currencyDescription": "Välj din föredragna valuta för alla finansiella displayer.",
+    "language": "Språk",
+    "languageDescription": "Välj språk för applikationsgränssnittet.",
+    "theme": "Tema",
+    "themeDescription": "Anpassa applikationens visuella utseende.",
+    "light": "Ljus",
+    "dark": "Mörk",
+    "system": "System",
+    "saveSuccess": "Inställningarna har uppdaterats!",
+    "saveError": "Misslyckades med att uppdatera inställningarna. Försök igen."
   }
 }

@@ -5,6 +5,8 @@ import { getTransactions } from "@/lib/transaction-actions"
 import { TransactionList } from "@/components/dashboard/TransactionList"
 import { Link } from "@/i18n/routing"
 import { ArrowRight } from "lucide-react"
+import { BudgetTracker } from "@/components/dashboard/BudgetTracker"
+import { Suspense } from "react"
 
 export default async function DashboardPage() {
   const session = await auth()
@@ -24,6 +26,10 @@ export default async function DashboardPage() {
       </div>
 
       <SummaryCards />
+
+      <Suspense fallback={<div className="h-32 bg-secondary/10 rounded-3xl animate-pulse" />}>
+        <BudgetTracker />
+      </Suspense>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="min-h-[400px] rounded-3xl bg-secondary/20 border border-border flex flex-col items-center justify-center p-8 text-center text-muted-foreground italic">

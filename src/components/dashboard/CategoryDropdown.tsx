@@ -51,6 +51,8 @@ interface CategoryDropdownProps {
   onAddNew: () => void
   fetching?: boolean
   onDeleteSuccess?: () => void
+  disabled?: boolean
+  placeholder?: string
 }
 
 export function CategoryDropdown({
@@ -60,7 +62,9 @@ export function CategoryDropdown({
   type,
   onAddNew,
   fetching,
-  onDeleteSuccess
+  onDeleteSuccess,
+  disabled,
+  placeholder
 }: CategoryDropdownProps) {
   const t = useTranslations("Transactions")
   const [isOpen, setIsOpen] = useState(false)
@@ -102,7 +106,7 @@ export function CategoryDropdown({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        disabled={fetching}
+        disabled={fetching || disabled}
         className="w-full bg-white dark:bg-charcoal border border-border rounded-xl px-4 py-3 flex items-center justify-between text-left focus:ring-2 ring-primary/20 transition-all font-bold disabled:opacity-50"
       >
         <div className="flex items-center gap-3">
@@ -111,7 +115,7 @@ export function CategoryDropdown({
               <SelectedIcon className="h-4 w-4" />
             </div>
           )}
-          <span>{selectedCategory?.name || (fetching ? "Loading..." : t("category"))}</span>
+          <span>{selectedCategory?.name || (fetching ? "Loading..." : (placeholder || t("category")))}</span>
         </div>
         <ChevronDown className={cn("h-4 w-4 text-muted-foreground transition-all", isOpen && "rotate-180")} />
       </button>

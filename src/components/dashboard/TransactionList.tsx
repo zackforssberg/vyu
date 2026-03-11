@@ -2,9 +2,11 @@
 
 import { useTranslations, useFormatter } from "next-intl"
 import { deleteTransaction } from "@/lib/transaction-actions"
+import { getUserPreferences } from "@/lib/settings-actions"
+import { formatCurrency } from "@/lib/currency"
 import { Trash2, Edit2, ArrowUpRight, ArrowDownLeft } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { AddTransactionForm } from "./AddTransactionForm"
 
 interface TransactionListProps {
@@ -16,6 +18,13 @@ export function TransactionList({ transactions }: TransactionListProps) {
   const format = useFormatter()
   const [deletingId, setDeletingId] = useState<string | null>(null)
   const [editingTransaction, setEditingTransaction] = useState<any | null>(null)
+  const [currency, setCurrency] = useState("SEK")
+
+  useEffect(() => {
+    getUserPreferences().then(res => {
+      if (res.success) setCurrency(res.data.currency)
+    })
+  }, [])
 
   const handleDelete = async (id: string) => {
     if (!confirm(t("confirmDelete"))) return
@@ -86,7 +95,7 @@ export function TransactionList({ transactions }: TransactionListProps) {
                     )}>
                       {tx.type === 'income' ? <ArrowUpRight className="h-4 w-4" /> : <ArrowDownLeft className="h-4 w-4" />}
                       <span>
-                        {format.number(tx.amount, { style: 'currency', currency: 'SEK' })}
+                        {formatCurrency(tx.amount, currency)}
                       </span>
                     </div>
                   </td>
